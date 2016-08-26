@@ -4,6 +4,7 @@ The application should first have an input form that collects the following:
 
 A 'Submit' button should clear out the inputs and your logic should store that information. Then, that information should be appended to the DOM so the user of the application can see the information they just entered.
 Finally, your logic should calculate all of the employee salaries and report back the Monthly cost of salaries.
+
 Hard Mode
 Create a delete button that removes an employee from the DOM. Note that in hard mode, it need not remove that Employee's salary from the reported total.
 Pro Mode
