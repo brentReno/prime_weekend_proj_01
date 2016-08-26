@@ -13,15 +13,15 @@ Good Luck, have a great weekend!
 What's needed for the project
 HTML
 
-h1
+h1-x
 
-Input Form
+Input Form-x
     Employee First Name
     Employee Last Name
     ID Number
     Job Title
     Annual Salary
-Submit button to js
+Submit button to js - button is in place, not functional
 Delete Button
 
 JAVASCRIPT
