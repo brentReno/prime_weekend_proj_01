@@ -15,4 +15,15 @@ var addEmp = function(){
   console.log( newEmp );
   // push emp into Employees
  employees.push( newEmp);
+ //display employee on the DOM
+ displayEmp();
+};//end newEmp
+
+var displayEmp = function(){
+  console.log('in displayEmp');
+  document.getElementById("firstname").value ="";
+  document.getElementById("lastname").value ="";
+  document.getElementById("idnumber").value ="";
+  document.getElementById("jobtitle").value ="";
+  document.getElementById("salary").value ="";
 };

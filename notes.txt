@@ -22,7 +22,7 @@ Input Form-x
     ID Number
     Job Title
     Annual Salary
-Submit button to js - button is in place, not functional
+Submit button to js - button is in place adds users to arrayx
 Delete Button
 
 JAVASCRIPT
