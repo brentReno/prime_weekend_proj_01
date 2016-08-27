@@ -2,6 +2,7 @@ console.log('Script is sourced');
 // Global variables \\
 var employees = [];
 var totalSalary = 0;
+var monthlySalary = 0;
 var addEmp = function(){
   // get user input
   // create employee object
@@ -33,11 +34,13 @@ var displayEmp = function(){
 
   document.getElementById("employeeResult").innerHTML =" ";
   for (var i = 0; i < employees.length; i++) {
+
     var employeeInfo = "<ul><li>Employee Name: "+ employees[i].firstName + " "+ employees[i].lastName +
     "<li> Employee Id Number: "+ employees[ i ].idNum +"</li><li> Job Title: " + employees[ i ].jobTitle + "</li><li>Salary: " +
-    employees[ i ].salary + "</li><li>Total Salary for Company:" + (totalSalary=totalSalary+employees[ i ].salary) + " </ul>";
+    employees[ i ].salary + "</li><li>Total Salary for Company:" + (totalSalary=totalSalary+employees[ i ].salary) +"<li> Monthly Salary expendatures: " + (monthlySalary = totalSalary/12) + "</li> </ul>";
     document.getElementById("employeeResult").innerHTML += employeeInfo;
 
   }//end for
 totalSalary = 0;
+monthlySalary= 0;
 };
