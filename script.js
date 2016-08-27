@@ -37,10 +37,20 @@ var displayEmp = function(){
 
     var employeeInfo = "<ul><li>Employee Name: "+ employees[i].firstName + " "+ employees[i].lastName +
     "<li> Employee Id Number: "+ employees[ i ].idNum +"</li><li> Job Title: " + employees[ i ].jobTitle + "</li><li>Salary: " +
-    employees[ i ].salary + "</li><li>Total Salary for Company:" + (totalSalary=totalSalary+employees[ i ].salary) +"<li> Monthly Salary expendatures: " + (monthlySalary = totalSalary/12) + "</li> </ul>";
+    employees[ i ].salary + "</li><li>Total Salary for Company:" + (totalSalary=totalSalary+employees[ i ].salary) +"<li> Monthly Salary expendatures: " +
+     (monthlySalary = totalSalary/12) + "</li> </ul>" +' <button onClick="removeEmployee( ' + i + ' )">Remove Employee</button>';
     document.getElementById("employeeResult").innerHTML += employeeInfo;
 
   }//end for
 totalSalary = 0;
 monthlySalary= 0;
-};
+};//end display Employee
+
+var removeEmployee= function( index ){
+  //log deleted employee
+  console.log( 'Employee: ' + employees [ index ].firstName + employees [ index ].lastName + " removed.");
+  //remove employee from the DOM
+   employees.splice(index,1);
+   //ReDisplay employees
+  displayEmp();
+}; // end removeEmployee
