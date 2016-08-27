@@ -21,9 +21,19 @@ var addEmp = function(){
 
 var displayEmp = function(){
   console.log('in displayEmp');
+  //clear inputs
   document.getElementById("firstname").value ="";
   document.getElementById("lastname").value ="";
   document.getElementById("idnumber").value ="";
   document.getElementById("jobtitle").value ="";
   document.getElementById("salary").value ="";
+  //add to DOM
+  document.getElementById("employeeResult").innerHTML =" ";
+  for (var i = 0; i < employees.length; i++) {
+    var employeeInfo = "<ul><li>Employee Name: "+ employees[i].firstName + " "+ employees[i].lastName +
+    "<li> Employee Id Number: "+ employees[ i ].idNum +"</li><li> Job Title: " + employees[ i ].jobTitle + "</li><li>Salary: " +
+    employees[ i ].salary + "</li></ul>";
+    document.getElementById("employeeResult").innerHTML += employeeInfo;
+  }
+
 };

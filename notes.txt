@@ -22,9 +22,9 @@ Input Form-x
     ID Number
     Job Title
     Annual Salary
-Submit button to js - button is in place adds users to arrayx
+Submit button to js - button is in place adds users to arrayx /clear inputsx
 Delete Button
 
 JAVASCRIPT
-take in input form and append to DOM
+take in input formx and append to DOMx
 calculate all of the employee salaries and report back the Monthly cost of salaries(append to DOM).
