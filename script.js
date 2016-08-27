@@ -1,7 +1,7 @@
 console.log('Script is sourced');
 // Global variables \\
 var employees = [];
-
+var totalSalary = 0;
 var addEmp = function(){
   // get user input
   // create employee object
@@ -10,7 +10,7 @@ var addEmp = function(){
     lastName: document.getElementById("lastname").value,
     idNum: document.getElementById("idnumber").value,
     jobTitle: document.getElementById("jobtitle").value,
-    salary: document.getElementById("salary").value,
+    salary: Number(document.getElementById("salary").value),
   };// end newEmp
   console.log( newEmp );
   // push emp into Employees
@@ -27,13 +27,17 @@ var displayEmp = function(){
   document.getElementById("idnumber").value ="";
   document.getElementById("jobtitle").value ="";
   document.getElementById("salary").value ="";
+  //variables
+
   //add to DOM
+
   document.getElementById("employeeResult").innerHTML =" ";
   for (var i = 0; i < employees.length; i++) {
     var employeeInfo = "<ul><li>Employee Name: "+ employees[i].firstName + " "+ employees[i].lastName +
     "<li> Employee Id Number: "+ employees[ i ].idNum +"</li><li> Job Title: " + employees[ i ].jobTitle + "</li><li>Salary: " +
-    employees[ i ].salary + "</li></ul>";
+    employees[ i ].salary + "</li><li>Total Salary for Company:" + (totalSalary=totalSalary+employees[ i ].salary) + " </ul>";
     document.getElementById("employeeResult").innerHTML += employeeInfo;
-  }
 
+  }//end for
+totalSalary = 0;
 };
