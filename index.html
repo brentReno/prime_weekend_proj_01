@@ -3,23 +3,21 @@
   <head>
     <meta charset="utf-8">
     <title>Weekend Project Week 1</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <script src="script.js"></script>
   </head>
   <body>
-    <h1> Salary Calculator </h1>
+    <h1> Employee Salary Calculator </h1>
+    <div class="submitForm">
     <form id="employeeInput">
-      Employee First Name:
-      <input type="text" id ="firstname"><br>
-      Employee Last Name:
-      <input type="text" id ="lastname"><br>
-      ID Number:
-      <input type="text" id ="idnumber"><br>
-      Job Title:
-      <input type="text" id ="jobtitle"><br>
-      Annual Salary:
-      <input type="text" id ="salary"><br>
+        <label>First Name: </label> <input type="text" id ="firstname">
+        <label>Last Name: </label> <input type="text" id ="lastname">
+        <label>ID Number: </label> <input type="text" id ="idnumber">
+        <label>Job Title: </label> <input type="text" id ="jobtitle">
+        <label>Annual Salary: </label> <input type="text" id ="salary"><br>
     </form>
       <button id="submit" onClick ="addEmp()">Submit Employee Information</button>
+    </div>
       <div id="employeeResult">
       </div>
   </body>
