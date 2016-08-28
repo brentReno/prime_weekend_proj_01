@@ -14,12 +14,19 @@ var addEmp = function(){
     salary: Number(document.getElementById("salary").value),
   };// end newEmp
   console.log( newEmp );
+  //Alert user that no fields, may be empty
+  if ( newEmp.firstName == " "|| newEmp.lastName ==" " || newEmp.idNum == " " ||
+  newEmp.jobTitle == " " ||newEmp.salary == " "){
+    // Alert the user
+    alert(' All fields are required to create a valid employee');
+  }
+    else{
   // push emp into Employees
  employees.push( newEmp);
  //display employee on the DOM
  displayEmp();
-
-};//end newEmp
+}//end check blank fields
+};//end addEmp
 
 var displayEmp = function(){
   console.log('in displayEmp');
@@ -31,7 +38,6 @@ var displayEmp = function(){
   document.getElementById("salary").value ="";
 
   //add to DOM
-
   document.getElementById("employeeResult").innerHTML =" ";
   for (var i = 0; i < employees.length; i++) {
     totalSalary=totalSalary+employees[ i ].salary;
@@ -61,7 +67,7 @@ var displaySalary = function(){
   var divID = 'salaryInfo';
   div.setAttribute('id', divID);
   div.innerHTML ='<h3>Yearly and Monthly Salaries</h3><p> Yearly Salary for all Employees: ' + totalSalary+
-  'Monthly Salary for all Employees: ' + monthlySalary;
+  '</p><p>Monthly Salary for all Employees: ' + monthlySalary +"</p>";
   var employeeInfo =document.getElementById('employeeResult');
   employeeInfo.appendChild(div);
 };//end display salary
