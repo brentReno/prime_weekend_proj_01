@@ -3,6 +3,13 @@ console.log('Script is sourced');
 var employees = [];
 var totalSalary = 0;
 var monthlySalary = 0;
+var clearInputs = function(){
+  document.getElementById("firstname").value ="";
+  document.getElementById("lastname").value ="";
+  document.getElementById("idnumber").value ="";
+  document.getElementById("jobtitle").value ="";
+  document.getElementById("salary").value ="";
+};
 var addEmp = function(){
   // get user input
   // create employee object
@@ -11,32 +18,33 @@ var addEmp = function(){
     lastName: document.getElementById("lastname").value,
     idNum: document.getElementById("idnumber").value,
     jobTitle: document.getElementById("jobtitle").value,
-    salary: Number(document.getElementById("salary").value),
+    salary: parseInt(document.getElementById("salary").value),
   };// end newEmp
-  console.log( newEmp );
+
   //Alert user that no fields, may be empty
   if ( newEmp.firstName == " "|| newEmp.lastName ==" " || newEmp.idNum == " " ||
-  newEmp.jobTitle == " " ||newEmp.salary == " "){
+  newEmp.jobTitle == " " ||newEmp.salary == " " ){
     // Alert the user
     alert(' All fields are required to create a valid employee');
   }
     else{
-  // push emp into Employees
- employees.push( newEmp);
- //display employee on the DOM
- displayEmp();
-}//end check blank fields
+  // push emp into Employee
+      if(isNaN(newEmp.salary) === true){
+           alert ('Annual Salary must contain a number.');
+           clearInputs();
+           return;
+          }//end check blank fields
+          else{
+            employees.push( newEmp);
+            //display employee on the DOM
+            displayEmp();
+          }
+      }
 };//end addEmp
-
 var displayEmp = function(){
   console.log('in displayEmp');
   //clear inputs
-  document.getElementById("firstname").value ="";
-  document.getElementById("lastname").value ="";
-  document.getElementById("idnumber").value ="";
-  document.getElementById("jobtitle").value ="";
-  document.getElementById("salary").value ="";
-
+  clearInputs();
   //add to DOM
   document.getElementById("employeeResult").innerHTML =" ";
   for (var i = 0; i < employees.length; i++) {
@@ -44,7 +52,7 @@ var displayEmp = function(){
     monthlySalary=totalSalary/12;
     var employeeInfo = "<ul><li>Employee Name: "+ employees[i].firstName + " "+ employees[i].lastName +
     "<li> Employee Id Number: "+ employees[ i ].idNum +"</li><li> Job Title: " + employees[ i ].jobTitle + "</li><li>Salary: " +
-    employees[ i ].salary + "</li></li> </ul>" +' <button onClick="removeEmployee( ' + i + ' )">Remove Employee</button>';
+    employees[ i ].salary.toLocaleString('USD', {style: 'currency', currency: 'USD'}) + "</li></li> </ul>" +' <button onClick="removeEmployee( ' + i + ' )">Remove Employee</button>';
     document.getElementById("employeeResult").innerHTML += employeeInfo;
   }//end for
   displaySalary();
@@ -61,13 +69,13 @@ var removeEmployee= function( index ){
   displayEmp();
 }; // end removeEmployee
 
-// Diplay yearly/monthly Salary informaation seperatley from Employee informaation
+// Diplay yearly/monthly Salary information seperatley from Employee informaation
 var displaySalary = function(){
   var div = document.createElement("div");
   var divID = 'salaryInfo';
   div.setAttribute('id', divID);
-  div.innerHTML ='<h3>Yearly and Monthly Salaries</h3><p> Yearly Salary for all Employees: ' + totalSalary+
-  '</p><p>Monthly Salary for all Employees: ' + monthlySalary +"</p>";
+  div.innerHTML ='<h3>Yearly and Monthly Salaries</h3><p> Yearly Salary for all Employees: ' + totalSalary.toLocaleString('USD', {style: 'currency', currency: 'USD'})+
+  '</p><p>Monthly Salary for all Employees: ' + monthlySalary.toLocaleString('USD', {style: 'currency', currency: 'USD'}) +"</p>";
   var employeeInfo =document.getElementById('employeeResult');
   employeeInfo.appendChild(div);
 };//end display salary
