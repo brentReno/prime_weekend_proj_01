@@ -73,7 +73,9 @@ var removeEmployee= function( index ){
 var displaySalary = function(){
   var div = document.createElement("div");
   var divID = 'salaryInfo';
+  var divClass = 'salary';
   div.setAttribute('id', divID);
+  div.setAttribute('class', divClass);
   div.innerHTML ='<h3>Yearly and Monthly Salaries</h3><p> Yearly Salary for all Employees: ' + totalSalary.toLocaleString('USD', {style: 'currency', currency: 'USD'})+
   '</p><p>Monthly Salary for all Employees: ' + monthlySalary.toLocaleString('USD', {style: 'currency', currency: 'USD'}) +"</p>";
   var employeeInfo =document.getElementById('employeeResult');

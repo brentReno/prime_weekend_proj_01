@@ -7,18 +7,20 @@
     <script src="script.js"></script>
   </head>
   <body>
+    <div class="calculator">
     <h1> Employee Salary Calculator </h1>
     <div class="submitForm">
-    <form id="employeeInput">
-        <label>First Name: </label> <input type="text" id ="firstname">
-        <label>Last Name: </label> <input type="text" id ="lastname">
-        <label>ID Number: </label> <input type="text" id ="idnumber">
-        <label>Job Title: </label> <input type="text" id ="jobtitle">
-        <label>Annual Salary: </label> <input type="text" id ="salary"><br>
+    <form id="employeeInput" class="form">
+        <label>First Name: </label> <input type="text" id ="firstname"><br>
+        <label>Last Name: </label> <input type="text" id ="lastname"><br>
+        <label>ID Number: </label> <input type="text" id ="idnumber"><br>
+        <label>Job Title: </label> <input type="text" id ="jobtitle"><br>
+        <label>Annual Salary: </label> <input type="text" id ="salary">
     </form>
       <button id="submit" onClick ="addEmp()">Submit Employee Information</button>
     </div>
-      <div id="employeeResult">
+      <div id="employeeResult" class ="employee">
       </div>
+</div>
   </body>
 </html>
