@@ -1,24 +1,34 @@
+
 h1{
   background-color: lightgrey;
-  width:400px;
+  width:390px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 4px;
+
 }
 .calculator{
 margin: auto;
 display: block;
 text-align: center;
-width:400px;
-background-color: darkgray;
+width:390px;
+font-family: Arial, sans-serif;
+border-style: solid;
+border-width: thin;
+border-color: black;
+border-radius: 4px;
+padding:5px;
+background-color: #e6ffff;
 }
 .form{
   width:390px;
   background-color: lightgrey;
   margin-left: auto;
   margin-right: auto;
-  padding: 5px;
-  padding-bottom: 20px;
+padding-top: 5px;
+padding-bottom: 5px;
+border-radius: 4px;
 }
 .form label{
   clear:left;
@@ -31,7 +41,55 @@ background-color: darkgray;
   margin-right: auto;
   margin-bottom: 4px;
 }
-.submitForm button{
-  margin-top: 10px;
-  margin-bottom: 5px;
+.form button{
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+ul{
+  text-align: center;
+  list-style-type: none
+  margin:auto;
+  width 400px;
+
+}
+
+ li{
+  text-align: center;
+  list-style-type: none;
+  width:390px;
+  margin-bottom: 2px;
+  margin-right: auto;
+  margin-left:auto;
+  background-color:lightgrey;
+  border-radius: 4px;
+}
+li:nth-child(even){
+  background-color: darkgrey;
+}
+li:last-child{
+  margin-bottom: 1px;
+}
+.employeeResult{
+  background-color: lightgrey;
+  margin-top: 0;
+}
+.salary{
+  background-color: lightgrey;
+  border-radius: 4px;
+}
+.list{
+  padding: 0;
+  margin: 0;
+}
+.salary{
+margin: auto;
+border: 5px, black;
+}
+h3{
+background-color: darkgrey;
+border-radius: 4px;
+}
+p{
+  margin-top: 2px;
 }

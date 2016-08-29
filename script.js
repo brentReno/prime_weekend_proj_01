@@ -50,9 +50,9 @@ var displayEmp = function(){
   for (var i = 0; i < employees.length; i++) {
     totalSalary=totalSalary+employees[ i ].salary;
     monthlySalary=totalSalary/12;
-    var employeeInfo = "<ul><li>Employee Name: "+ employees[i].firstName + " "+ employees[i].lastName +
+    var employeeInfo = "<ul class='list'><li>Employee Name: "+ employees[i].firstName + " "+ employees[i].lastName +
     "<li> Employee Id Number: "+ employees[ i ].idNum +"</li><li> Job Title: " + employees[ i ].jobTitle + "</li><li>Salary: " +
-    employees[ i ].salary.toLocaleString('USD', {style: 'currency', currency: 'USD'}) + "</li></li> </ul>" +' <button onClick="removeEmployee( ' + i + ' )">Remove Employee</button>';
+    employees[ i ].salary.toLocaleString('USD', {style: 'currency', currency: 'USD'}) + "</li></li> </ul>" +' <button onClick="removeEmployee ( ' + i + ' )">Remove Employee</button>';
     document.getElementById("employeeResult").innerHTML += employeeInfo;
   }//end for
   displaySalary();
@@ -76,8 +76,8 @@ var displaySalary = function(){
   var divClass = 'salary';
   div.setAttribute('id', divID);
   div.setAttribute('class', divClass);
-  div.innerHTML ='<h3>Yearly and Monthly Salaries</h3><p> Yearly Salary for all Employees: ' + totalSalary.toLocaleString('USD', {style: 'currency', currency: 'USD'})+
-  '</p><p>Monthly Salary for all Employees: ' + monthlySalary.toLocaleString('USD', {style: 'currency', currency: 'USD'}) +"</p>";
+  div.innerHTML ='<h3>Yearly and Monthly Salaries</h3><p> <strong>Yearly Salary for all Employees: </strong><em>' + totalSalary.toLocaleString('USD', {style: 'currency', currency: 'USD'})+
+  '</em></p><p><strong>Monthly Salary for all Employees: </strong><em>' + monthlySalary.toLocaleString('USD', {style: 'currency', currency: 'USD'}) +"</em></p>";
   var employeeInfo =document.getElementById('employeeResult');
   employeeInfo.appendChild(div);
 };//end display salary
