@@ -1,3 +1,5 @@
+Challenge and tasks to complete during project
+
 Weekend Challenge 1
 For your weekend challenge, you will need to create an application that records employees along with their salary. We also want to add the salaries up so we know how much we’re spending each month.
 The application should first have an input form that collects the following:
@@ -23,8 +25,8 @@ Input Form-x
     Job Title
     Annual Salary
 Submit button to js - button is in place adds users to arrayx /clear inputsx
-Delete Button
+Delete Buttonx
 
 JAVASCRIPT
 take in input formx and append to DOMx
-calculate all of the employee salaries x and report back the Monthly cost of salaries(append to DOM).
+calculate all of the employee salaries x and report back the Monthly cost of salariesx(append to DOM)x.
