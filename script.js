@@ -26,18 +26,22 @@ var addEmp = function(){
   newEmp.jobTitle == " " ||newEmp.salary == " " ){
     // Alert the user
     alert(' All fields are required to create a valid employee');
+    setFocus();
+    return;
   }
     else{
   // push emp into Employee
       if(isNaN(newEmp.salary) === true){
            alert ('Annual Salary must contain a number.');
            clearInputs();
+           setFocus();
            return;
           }//end check blank fields
           else{
             employees.push( newEmp);
             //display employee on the DOM
             displayEmp();
+            setFocus();
           }
       }
 };//end addEmp
@@ -67,6 +71,7 @@ var removeEmployee= function( index ){
    employees.splice(index,1);
    //ReDisplay employees
   displayEmp();
+  setFocus();
 }; // end removeEmployee
 
 // Diplay yearly/monthly Salary information seperatley from Employee informaation
@@ -81,3 +86,8 @@ var displaySalary = function(){
   var employeeInfo =document.getElementById('employeeResult');
   employeeInfo.appendChild(div);
 };//end display salary
+
+// setFocus provided by John Arkema- https://github.com/johnark88
+var setFocus= function() {
+    document.getElementById("firstname").focus();
+}//end setFocus
