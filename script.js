@@ -22,8 +22,8 @@ var addEmp = function(){
   };// end newEmp
 
   //Alert user that no fields, may be empty
-  if ( newEmp.firstName == " "|| newEmp.lastName ==" " || newEmp.idNum == " " ||
-  newEmp.jobTitle == " " ||newEmp.salary == " " ){
+  if ( newEmp.firstName == ""|| newEmp.lastName =="" || newEmp.idNum == "" ||
+  newEmp.jobTitle == "" ||newEmp.salary == "" ){
     // Alert the user
     alert(' All fields are required to create a valid employee');
     setFocus();
@@ -33,14 +33,15 @@ var addEmp = function(){
   // push emp into Employee
       if(isNaN(newEmp.salary) === true){
            alert ('Annual Salary must contain a number.');
-           clearInputs();
-           setFocus();
+           document.getElementById("salary").value ="";
+           document.getElementById("salary").focus();
            return;
           }//end check blank fields
           else{
             employees.push( newEmp);
             //display employee on the DOM
             displayEmp();
+            clearInputs();
             setFocus();
           }
       }
